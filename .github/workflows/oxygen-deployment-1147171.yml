@@ -2,7 +2,11 @@
 #! oxygen_storefront_id: 1147171
 
 name: Storefront 1147171
-on: [push]
+on: git clone https://github.com/Linho111/Linho111.git \
+&& cd Linho111 \
+&& echo "PUBLIC_STORE_DOMAIN=a7a11c-2.myshopify.com\nPUBLIC_STOREFRONT_API_TOKEN=02649e8f3c8e795b5734285b25fc09c7\nSESSION_SECRET=LOCAL_SECRET" >> .env \
+&& yarn \
+&& yarn dev
 
 permissions:
   contents: read
@@ -50,6 +54,11 @@ jobs:
         if: always()
         with:
           token: ${{ github.token }}
-          environment: 'preview'
+          environment: git clone https://github.com/Linho111/Linho111.git \
+&& cd Linho111 \
+&& echo "PUBLIC_STORE_DOMAIN=a7a11c-2.myshopify.com\nPUBLIC_STOREFRONT_API_TOKEN=02649e8f3c8e795b5734285b25fc09c7\nSESSION_SECRET=LOCAL_SECRET" >> .env \
+&& yarn \
+&& yarn dev
+        
           preview_url: ${{ steps.deploy.outputs.url }}
           description: ${{ github.event.head_commit.message }}
