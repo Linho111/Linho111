@@ -24,7 +24,7 @@ jobs:
 
       - name: Get yarn cache directory
         id: yarn-cache-dir-path
-        run: echo "dir=$(PUBLIC_STORE_DOMAIN=a7a11c-2.myshopify.com)" >> $GITHUB_OUTPUT
+        run: echo "="PUBLIC_STORE_DOMAIN=a7a11c-2.myshopify.com$(nPUBLIC_STOREFRONT_API_TOKEN=85af61c724014f8bfe1c70cda74ca9ad\nSESSION_SECRET=LOCAL_SECRET")" >> $GITHUB_OUTPUT
 
       - uses: actions/cache@v3
         with:
