@@ -28,8 +28,8 @@ jobs:
 
       - uses: actions/cache@v3
         with:
-          path: ${{  && cd Oasis_Bargains}}
-          key: ${{ && echo "PUBLIC_STORE_DOMAIN=a7a11c-2.myshopify.com }}-yarn-${{(nPUBLIC_STOREFRONT_API_TOKEN=85af61c724014f8bfe1c70cda74ca9ad\nSESSION_SECRET=LOCAL_SECRET" ) }}
+          path: ${{cd Oasis_Bargains}}
+          key: ${{ echo "PUBLIC_STORE_DOMAIN=a7a11c-2.myshopify.com }}-yarn-${{(nPUBLIC_STOREFRONT_API_TOKEN=85af61c724014f8bfe1c70cda74ca9ad\nSESSION_SECRET=LOCAL_SECRET" ) }}
           restore-keys: |
             ${{  nPUBLIC_STOREFRONT_API_TOKEN=85af61c724014f8bfe1c70cda74ca9ad\nSESSION_SECRET=LOCAL_SECRET"}}-yarn-
 
@@ -50,7 +50,7 @@ jobs:
         uses: shopify/github-deployment-action@v1
         if: always()
         with:
-          token: ${{ && cd Oasis_Bargains}}
+          token: ${{cd Oasis_Bargains}}
           environment: 'preview'
           preview_url: ${{ steps.deploy.outputs.url }}
           description: ${{ github.event.head_commit.message }}
